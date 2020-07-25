@@ -32,11 +32,11 @@ class chain:
 class seating:
     def __init__(self, time_factor, seat, bottle):
         self.time_factor = time_factor
-        self.seat = seat
+        self.seat_p = seat
         self.bottle = bottle
     
     def price(self):
-        return (self.seat+ seat.bottle) * self.time_factor
+        return (self.seat_p + seat.bottle) * self.time_factor
 
 class frame:
     def __init__(self, time_factor, frame, front_guard, back_guard):
