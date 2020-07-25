@@ -1,14 +1,14 @@
 {
   "cycle_1": {
     "frame" : {"date": "03/12/2016" , "frame": 1000, "fguard": 250, "bguard": 280 },
-    "handle" : {"date": "03/12/2016", "handel_bar": 250, "break_wire": 100, "break_shoe": 50},
+    "handle" : {"date": "03/12/2016", "handle_bar": 250, "break_wire": 100, "break_shoe": 50},
     "seating" : {"date": "03/12/2016", "seat": 120, "bottel": 20},
     "wheel" : {"date": "03/12/2016" , "spokes": 250, "rim": 100 ,"tube": 250, "tyre":300},
     "chain" : {"date": "03/12/2016", "pedal": 120, "chain": 80, "rim":100}
   },
   "cycle_2": {
     "frame" : {"date": "03/1/2017" , "frame": 1000, "fguard": 250, "bguard": 180 },
-    "handle" : {"date": "03/12/2016", "handel_bar": 250, "break_wire": 100, "break_shoe": 50},
+    "handle" : {"date": "03/12/2016", "handle_bar": 250, "break_wire": 100, "break_shoe": 50},
     "seating" : {"date": "03/12/2016", "seat": 120, "bottel": 20},
     "wheel" : {"date": "03/12/2016" , "spokes": 250, "rim": 100 ,"tube": 250, "tyre":300},
     "chain" : {"date": "03/12/2016", "pedal": 120, "chain": 80, "rim":100}
