@@ -17,7 +17,7 @@ class handle:
         self.break_shoe = break_shoe
         
     def price(self):
-        return (self.grip+self.break_shoe+self.break_wire)*self.time_factor
+        return (self.handle_bar+self.break_shoe+self.break_wire)*self.time_factor
 
 class chain:
     def __init__(self, time_factor, pedal, chain, rim):
