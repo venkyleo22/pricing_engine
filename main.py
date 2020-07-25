@@ -1,19 +1,15 @@
 from models import wheel, handle, chain, seating, frame, cycle
+from queue import Queue 
 import json
 
 
 print("Welcome to pricing engine for cycle")
-fp =open("input.json","r")
-
-data = json.load(fp)
-#print(data)
 
 def calculate_date_factor(time):
     ##
     return 1.5
 
-
-for cycle_id, params in data.items():
+def get_cycle_obj(cycle_id, params):
     frame_details = params.get("frame")
     frame_tfactor = calculate_date_factor(frame_details.get("date"))
     frame_price = frame_details.get("frame")
@@ -50,7 +46,25 @@ for cycle_id, params in data.items():
     chain_obj = chain(chain_tfactor,pedal,chain_price,rim)
     
     cycle_obj = cycle(cycle_id,frame_obj,h_obj,s_obj,wheel_obj,chain_obj)
-    cycle_obj.display()
-    
-    
-    
+    return cycle_obj
+
+def start_enigne():
+    fp =open("input.json","r")
+    data = json.load(fp)
+    q = Queue(maxsize = 10) 
+    for cycle_id, params in data.items():
+        cycle_obj = get_cycle_obj(cycle_id,params)
+        if not q.full():
+            q.put(cycle_obj)
+            cycle_obj.start()
+            continue
+        else:
+            #Queue is filled
+            cyle_thread = q.get()
+            if cyle_thread.isAlive():
+                cycle_thread.join()
+            q.put(cycle_obj)
+            cycle_obj.start()
+            
+if __name__ == "__main__":
+    start_enigne()
