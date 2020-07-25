@@ -64,7 +64,7 @@ class cycle:
         wheel_price = self.wheel.price()
         chain_price = self.chain.price()
         
-        self.total_price = frame_price + handle_price + seat_price \
+        self.total_price = frame_price + handle_price + seat_price +\
                             wheel_price + chain_price
     
     def __str__(self):
