@@ -1,3 +1,5 @@
+from threading import Thread
+
 class wheel:
     def __init__(self, time_factor, spokes, rim, tube ,tyre):
         self.time_factor = time_factor
@@ -48,8 +50,9 @@ class frame:
     def price(self):
         return (self.frame+self.fg+self.bg)*self.time_factor
       
-class cycle:
+class cycle(Thread):
     def __init__(self, cycle_id, frame, handle, seating, wheel, chain):
+        super().__init__() 
         self.cycle_id = cycle_id
         self.frame = frame
         self.handle = handle
@@ -67,6 +70,6 @@ class cycle:
         self.total_price = frame_price + handle_price + seat_price + \
                             wheel_price + chain_price
     
-    def display(self):
+    def run(self):
         self.price()
         print("The price of the cycle %s is %s " %(self.cycle_id, self.total_price))
