@@ -1,3 +1,4 @@
+from datetime import datetime
 from models import wheel, handle, chain, seating, frame, cycle
 from queue import Queue 
 import json
@@ -6,8 +7,15 @@ import json
 print("Welcome to pricing engine for cycle")
 
 def calculate_date_factor(time):
-    ##
-    return 1.5
+    d1 = datetime.strptime("01/1/2006", '%d/%m/%Y')
+    d2 = datetime.strptime("03/12/2016", '%d/%m/%Y')
+    date = datetime.strptime(time, '%d/%m/%Y')
+    if date < d1:
+        return 1
+    elif date > d1 and date < d2:
+        return 1.2 
+    else:
+        return 1.5
 
 def get_cycle_obj(cycle_id, params):
     frame_details = params.get("frame")
