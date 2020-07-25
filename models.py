@@ -36,7 +36,7 @@ class seating:
         self.bottle = bottle
     
     def price(self):
-        return (self.seat_p + seat.bottle) * self.time_factor
+        return (self.seat_p + self.bottle) * self.time_factor
 
 class frame:
     def __init__(self, time_factor, frame, front_guard, back_guard):
@@ -64,9 +64,9 @@ class cycle:
         wheel_price = self.wheel.price()
         chain_price = self.chain.price()
         
-        self.total_price = frame_price + handle_price + seat_price +\
+        self.total_price = frame_price + handle_price + seat_price + \
                             wheel_price + chain_price
     
-    def __str__(self):
+    def display(self):
         self.price()
         print("The price of the cycle %s is %s " %(self.cycle_id, self.total_price))
